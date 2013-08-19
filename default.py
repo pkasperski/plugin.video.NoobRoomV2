@@ -233,6 +233,7 @@ def GenreList(genre=''):
             for one in match:
                 (movieYear, moviehref, movieName) = one
                 href = moviehref.replace("?", "")
+                movieYear = movieYear.replace(" ", "")
                 addLink('%s (%s)' % (urllib.unquote_plus(movieName), movieYear), href, 6, nooblink + "/2img" + href + ".jpg", False)
         else:
             xbmcplugin.endOfDirectory(handle=int(sysarg), updateListing=False, succeeded=True)
